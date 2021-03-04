@@ -1,0 +1,20 @@
+<html>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      const rootElement = document.getElementById("root");
+      const element = document.createElement("div");
+      element.textContent = "Hello World from javascript";
+      element.className = "container";
+      rootElement.append(element);
+    </script>
+    <script type="module">
+      const rootElement = document.getElementById("root");
+      document.addEventListener('keypress', function(event) {
+        const element = document.createElement("span");
+        element.textContent = event.key;
+        rootElement.append(element);
+      });
+    </script>
+  </body>
+</html>
