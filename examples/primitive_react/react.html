@@ -5,13 +5,13 @@
     <script src="https://unpkg.com/react-dom@16.13.1/umd/react-dom.development.js"></script>
     <script type="module">
       const rootElement = document.getElementById("root");
+      const child = React.createElement("div", {}, "child");
       const element = React.createElement(
         "div",
         { className: "container" },
-        "Hello World"
+        child
       );
       ReactDOM.render(element, rootElement);
-      console.log(ReactDOM.server.renderToString(element))
     </script>
   </body>
 </html>
