@@ -10,6 +10,9 @@
   - callback
 
 # Fuite mémoire
-
+- Diagnostic
+- Cause
 
 # Analyse de taille de bundle
+- [bundlephobia](https://bundlephobia.com/)
+- extension VSCode

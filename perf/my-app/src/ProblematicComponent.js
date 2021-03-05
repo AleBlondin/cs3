@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ProblematicComponent = () => {
-  let counter = 0;
+  const [counter, setCounter] = useState(0)
 
   return (
     <>
@@ -9,8 +9,7 @@ const ProblematicComponent = () => {
 
       <button
         onClick={() => {
-          counter += 1;
-          console.log({ counter });
+          setCounter(counter + 1);
         }}
       >
         {counter}
