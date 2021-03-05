@@ -8,10 +8,10 @@ const complexCounterUpdate = (counter) => {
 };
 
 const ProblematicComponent = () => {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState({counterValue: 0});
 
   useEffect(() => {
-    complexCounterUpdate(counter);
+    complexCounterUpdate(counter.counterValue);
   }, [counter]);
 
   return (
@@ -20,11 +20,10 @@ const ProblematicComponent = () => {
 
       <button
         onClick={() => {
-          complexCounterUpdate(counter);
-          setCounter(counter + 1);
+          setCounter({ counterValue: 0 });
         }}
       >
-        {counter}
+        {counter.counterValue}
       </button>
     </>
   );
