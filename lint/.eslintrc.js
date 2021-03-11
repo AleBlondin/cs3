@@ -14,5 +14,6 @@ module.exports = {
     quotes: ["error", "double"],
     "max-len": 0,
     "no-date": "error",
+    "no-unspecified-env-variables": "error",
   },
 };
