@@ -5,11 +5,16 @@
   "license": "MIT",
   "scripts": {
     "start": "node ./src/index.mjs",
-    "lint": "yarn eslint . --rulesdir=src/rules src/**.mjs"
+    "lint": "yarn eslint . --rulesdir=src/rules src/**.mjs",
+    "test": "jest"
   },
   "devDependencies": {
     "eslint": "^7.21.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-plugin-import": "^2.22.1",
+    "jest": "^26.6.3"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0"
   }
 }
