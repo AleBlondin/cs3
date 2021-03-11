@@ -36,3 +36,6 @@ Configuration:
 [Beaucoup d'options](https://eslint.org/docs/user-guide/configuring/):
 - la gravité
 - le détail
+
+### Parsing simple
+=> obliger l'utilisation de single ou double quotes
