@@ -9,7 +9,9 @@ module.exports = {
 
   create(context) {
     function checkIsDate(node) {
-      console.log(node);
+      if (node.callee.name !== "Date") {
+        return;
+      }
 
       context.report({
         node,
