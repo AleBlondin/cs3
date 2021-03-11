@@ -61,5 +61,20 @@ no-restricted-syntax
 
 ### Création de règle custom
 
-### Exemple 1
+#### Exemple 1
 Recoder la règle précédente en partant du fichier no-date.js
+
+#### Exemple 2
+On veut empêcher le déploiement de notre application s'il manque des variables d'environnements. Pour cela on:
+- créer un job CI qui check si toutes les variables du fichier .env.template ne sont pas définies sur les différents envs. => HORS SCOPE mais exemple [ici](./src/check-ci.mjs)
+- créer une règle de linter qui détecte si des variables d'env sont utilisées dans le code sans être définies dans le .env.template => notre objectif
+Dans notre cadre on enlève la partie lecture de fichier, on définira les variables d'env dans le fichier de la règle de linter plutôt que dans .env.template
+
+Objectif:
+yarn test doit être OK
+
+
+#### Exemple 3
+La même avec:
+- gestion d'exception: certaines variables d'env n'ont pas à aller dans le .env.template
+- lecture de fichier
