@@ -56,3 +56,5 @@ Utiliser un [explorateur d'AST](https://astexplorer.net/)
 
 #### Ajout de la règle
 no-restricted-syntax
+
+- Bien penser à mettre un message d'erreur explicite
