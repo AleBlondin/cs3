@@ -30,7 +30,7 @@ Configuration:
     - checks de syntaxe
     - commentaires
 - ne pas oublier de configurer son IDE ! Pour VScode rien à faire
-
+- créer un script qui sera exécuté dans la CI
 ### Personnalisation
 
 [Beaucoup d'options](https://eslint.org/docs/user-guide/configuring/):
@@ -38,4 +38,21 @@ Configuration:
 - le détail
 
 ### Parsing simple
-=> obliger l'utilisation de single ou double quotes
+Exemple: Obliger l'utilisation de single ou double quotes
+
+### L'AST
+
+#### Exemple
+Exemple: Interdire une syntaxe
+On veut interdire l'utilisation de Date tel que:
+``` js
+const someDate = new Date()
+```
+
+Pourquoi ? Si on utilise une lib tel que dayjs qui a une timezone de configuré, alors que Date utlise la locale.
+
+#### Sandbox
+Utiliser un [explorateur d'AST](https://astexplorer.net/)
+
+#### Ajout de la règle
+no-restricted-syntax

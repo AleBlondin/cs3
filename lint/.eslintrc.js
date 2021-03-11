@@ -11,7 +11,6 @@ module.exports = {
     sourceType: "module",
   },
   rules: {
-    "no-console": ["error"],
     quotes: ["error", "double"],
   },
 };
