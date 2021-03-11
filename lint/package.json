@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node ./index.js",
-    "lint": "yarn eslint ."
+    "start": "node ./src/index.mjs",
+    "lint": "yarn eslint . --rulesdir=src/rules src/**.mjs"
   },
   "devDependencies": {
     "eslint": "^7.21.0",

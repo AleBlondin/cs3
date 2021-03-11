@@ -58,3 +58,8 @@ Utiliser un [explorateur d'AST](https://astexplorer.net/)
 no-restricted-syntax
 
 - Bien penser à mettre un message d'erreur explicite
+
+### Création de règle custom
+
+### Exemple 1
+Recoder la règle précédente en partant du fichier no-date.js

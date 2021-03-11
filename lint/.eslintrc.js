@@ -12,12 +12,7 @@ module.exports = {
   },
   rules: {
     quotes: ["error", "double"],
-    "no-restricted-syntax": [
-      "error",
-      {
-        selector: "NewExpression[callee.name=Date]",
-        message: "Don't use native Date class, use dayjs library instead",
-      },
-    ],
+    "max-len": 0,
+    "no-date": "error",
   },
 };
