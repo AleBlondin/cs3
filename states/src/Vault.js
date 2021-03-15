@@ -1,5 +1,4 @@
 import "./Vault.css";
-import { useEffect, useState } from "react";
 
 export const isCodeCorrect = (counts) => {
   if (counts.length === 0) {
@@ -10,11 +9,8 @@ export const isCodeCorrect = (counts) => {
 };
 
 const Vault = ({ counts }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    setIsOpen(isCodeCorrect(counts));
-  }, [counts]);
+  const isOpen = isCodeCorrect(counts);
+  // const isOpen = useMemo(() => isCodeCorrect(counts), counts);
 
   return (
     <div className="vault">{isOpen ? "Hey I'am open !" : "Still closed"}</div>

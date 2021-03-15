@@ -12,6 +12,11 @@ Objectif: faire en sorte que le vault afficher ouvert quand les valeurs des 3 co
 
 Pour cela on va remonter le state des compteurs.
 
+1. Remonter le state jusqu'au niveau ou en a besoin
+2. Supprimer les states dont on n'a pas besoin:
+    - car il se déduit d'un autre state
+    - penser à la mémoisation si le calcul de ce state déduit est complexe
+
 ## Redux state
 
 ### Principes
