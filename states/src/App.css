@@ -6,3 +6,14 @@
   height: 500px;
   width: 100%;
 }
+
+.App .container {
+}
+
+.App .counters {
+  display: flex;
+}
+
+.App .vault {
+  margin-top: 20px;
+}
