@@ -1,0 +1,13 @@
+.counter {
+  border: 1px solid black;
+  width: 50px;
+  height: 100px;
+
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+}
+
+.counter + .counter {
+  margin-left: 10px;
+}
