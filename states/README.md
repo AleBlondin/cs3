@@ -6,6 +6,12 @@
 - Pourquoi on utilise un hook au lieu de déclarer un state avec const ?
 - Pourquoi on utilise le setter de state plutôt que de muter l'objet ?
 
+### State inter-dépendants
+
+Objectif: faire en sorte que le vault afficher ouvert quand les valeurs des 3 compteurs sont identiques.
+
+Pour cela on va remonter le state des compteurs.
+
 ## Redux state
 
 ### Principes
