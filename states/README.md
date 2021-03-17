@@ -62,3 +62,46 @@ Logguer toutes les actions qui se passent
 ## XState
 
 https://github.com/davidkpiano/xstate
+
+### Principes
+
+- des états définis
+- des transitions permises seulement de certains états à états
+
+Exemple: tunnel de subscription
+
+```
+Machine({
+  id: 'form tunnel',
+  initial: 'idle',
+  states: {
+    idle: {
+      on: {
+        GO_TO_FORM: 'form_1'
+      }
+    },
+    form_1: {
+      on: {
+        CONTINUE: 'form_2'
+      }
+    },
+    form_2: {
+      on: {
+        CONTINUE: 'form_3',
+        GO_BACK: 'form_1'
+      }
+    },
+    form_3: {
+      on: {
+        SUBMIT: 'success',
+        GO_BACK: 'form_2'
+      }
+    },
+    success: {
+      type: 'final'
+    }
+  }
+})
+```
+
+TODO: feu tricolore
