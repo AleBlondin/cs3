@@ -1,11 +1,14 @@
 import { useMachine } from "@xstate/react";
-import { Machine } from "xstate";
+import { assign, Machine } from "xstate";
 import "./App.css";
 import { FinalScreen, Form1, Form2, Form3, InitialScreen } from "./Form";
 
 const formMachine = Machine({
   id: "form tunnel",
   initial: "idle",
+  context: {
+    value1: "",
+  },
   states: {
     idle: {
       on: {
@@ -22,6 +25,14 @@ const formMachine = Machine({
         CONTINUE: "form_3",
         GO_BACK: "form_1",
       },
+      entry: assign({
+        value1: (...args) => {
+          console.log({ args });
+          return {
+            value1: "",
+          };
+        },
+      }),
     },
     form_3: {
       on: {

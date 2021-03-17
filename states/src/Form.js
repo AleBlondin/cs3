@@ -23,7 +23,9 @@ export const Form1 = ({ send }) => {
         }}
       ></input>
       <div>
-        <button onClick={() => send("CONTINUE")}>Go to Next</button>
+        <button onClick={() => send({ type: "CONTINUE", value })}>
+          Go to Next
+        </button>
       </div>
     </div>
   );
