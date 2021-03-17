@@ -1,19 +1,54 @@
+import { useMachine } from "@xstate/react";
+import { Machine } from "xstate";
 import "./App.css";
-import Counter from "./Counter";
-import Vault from "./Vault";
+import { FinalScreen, Form1, Form2, Form3, InitialScreen } from "./Form";
+
+const formMachine = Machine({
+  id: "form tunnel",
+  initial: "idle",
+  states: {
+    idle: {
+      on: {
+        GO_TO_FORM: "form_1",
+      },
+    },
+    form_1: {
+      on: {
+        CONTINUE: "form_2",
+      },
+    },
+    form_2: {
+      on: {
+        CONTINUE: "form_3",
+        GO_BACK: "form_1",
+      },
+    },
+    form_3: {
+      on: {
+        SUBMIT: "success",
+        GO_BACK: "form_2",
+      },
+    },
+    success: {
+      type: "final",
+    },
+  },
+});
 
 function App() {
+  const [current, send] = useMachine(formMachine);
+  console.log({ current });
+
   return (
     <div className="App">
       <div className="container">
-        <div className="counters">
-          <Counter counterId={1}></Counter>
-          <Counter counterId={2}></Counter>
-          <Counter counterId={3}></Counter>
-        </div>
-        <div className="vault">
-          <Vault></Vault>
-        </div>
+        {current.value === "idle" ? (
+          <InitialScreen send={send}></InitialScreen>
+        ) : null}
+        {current.value === "form_1" ? <Form1 send={send}></Form1> : null}
+        {current.value === "form_2" ? <Form2 send={send}></Form2> : null}
+        {current.value === "form_3" ? <Form3 send={send}></Form3> : null}
+        {current.value === "success" ? <FinalScreen></FinalScreen> : null}
       </div>
     </div>
   );

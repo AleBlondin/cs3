@@ -8,6 +8,7 @@
 }
 
 .App .container {
+  display: flex;
 }
 
 .App .counters {

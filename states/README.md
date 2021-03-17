@@ -105,3 +105,22 @@ Machine({
 ```
 
 TODO: feu tricolore
+
+Demo complexe: https://xstate.js.org/viz/
+
+### Intégration avec une UI (React)
+
+### Garder les inputs + contexte
+
+On veut que sur l'écran du succès, on ait les inputs tapés sur les 3 formulaires.
+On va donc transformer les events qui étaient des strings (`"CONTINUE"`) en objet (`{"type: "CONTINUE": value: "my_input"`)
+
+- passer une valeur avec un event: https://xstate.js.org/docs/guides/events.html
+- le contexte: https://codesandbox.io/s/xstate-react-template-3t2tg
+- récupération de la valeur de l'input: exemple dans le composant form1
+
+### Utilisation des guards
+
+Conditionner des transitions.
+
+Ne pas autoriser de continuer si l'utilisateur n'a pas rempli de valeur d'input.
