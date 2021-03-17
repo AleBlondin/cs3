@@ -26,12 +26,7 @@ const formMachine = Machine({
         GO_BACK: "form_1",
       },
       entry: assign({
-        value1: (...args) => {
-          console.log({ args });
-          return {
-            value1: "",
-          };
-        },
+        value1: (_context, event) => event.value,
       }),
     },
     form_3: {
@@ -56,7 +51,9 @@ function App() {
         {current.value === "idle" ? (
           <InitialScreen send={send}></InitialScreen>
         ) : null}
-        {current.value === "form_1" ? <Form1 send={send}></Form1> : null}
+        {current.value === "form_1" ? (
+          <Form1 send={send} savedValue={current.context.value1}></Form1>
+        ) : null}
         {current.value === "form_2" ? <Form2 send={send}></Form2> : null}
         {current.value === "form_3" ? <Form3 send={send}></Form3> : null}
         {current.value === "success" ? <FinalScreen></FinalScreen> : null}

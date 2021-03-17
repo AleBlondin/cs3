@@ -113,6 +113,8 @@ Demo complexe: https://xstate.js.org/viz/
 ### Garder les inputs + contexte
 
 On veut que sur l'écran du succès, on ait les inputs tapés sur les 3 formulaires.
+On veut aussi que lorsqu'on revienne en arrière on voit ce qu'on a tapé.
+
 On va donc transformer les events qui étaient des strings (`"CONTINUE"`) en objet (`{"type: "CONTINUE": value: "my_input"`)
 
 - passer une valeur avec un event: https://xstate.js.org/docs/guides/events.html

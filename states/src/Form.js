@@ -9,8 +9,8 @@ export const InitialScreen = ({ send }) => {
   );
 };
 
-export const Form1 = ({ send }) => {
-  const [value, setValue] = useState("");
+export const Form1 = ({ send, savedValue }) => {
+  const [value, setValue] = useState(savedValue);
 
   return (
     <div className="form">
