@@ -12,9 +12,9 @@ function App() {
     <div className="App">
       <div className="container">
         <div className="counters">
-          <Counter count={count1} setCount={setCount1}></Counter>
-          <Counter count={count2} setCount={setCount2}></Counter>
-          <Counter count={count3} setCount={setCount3}></Counter>
+          <Counter counterId={1}></Counter>
+          <Counter counterId={2}></Counter>
+          <Counter counterId={3}></Counter>
         </div>
         <div className="vault">
           <Vault counts={[count1, count2, count3]}></Vault>

@@ -1,11 +1,16 @@
+import { useDispatch, useSelector } from "react-redux";
 import "./Counter.css";
+import { incrementCounter, selectCount } from "./redux";
 
-const Counter = ({ count, setCount }) => {
+const Counter = ({ counterId }) => {
+  const dispatch = useDispatch();
+  const count = useSelector(selectCount)({ counterId });
+
   return (
     <div className="counter">
       <button
         onClick={() => {
-          setCount(count + 1);
+          dispatch(incrementCounter({ counterId }));
         }}
       >
         Click me

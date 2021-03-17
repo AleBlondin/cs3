@@ -3,6 +3,7 @@
 ## React state
 
 ### Rappels
+
 - Pourquoi on utilise un hook au lieu de déclarer un state avec const ?
 - Pourquoi on utilise le setter de state plutôt que de muter l'objet ?
 
@@ -14,8 +15,8 @@ Pour cela on va remonter le state des compteurs.
 
 1. Remonter le state jusqu'au niveau ou en a besoin
 2. Supprimer les states dont on n'a pas besoin:
-    - car il se déduit d'un autre state
-    - penser à la mémoisation si le calcul de ce state déduit est complexe
+   - car il se déduit d'un autre state
+   - penser à la mémoisation si le calcul de ce state déduit est complexe
 
 ## Redux state
 
@@ -27,6 +28,36 @@ https://redux.js.org/understanding/thinking-in-redux/three-principles
 - Le state est immutable (lecture seule)
 - Un changement d'état se fait par une fonction pure: 1 state = 1 state précédent + 1 action
 - CQRS: Command Query Responsability Segregation
+
+![redux data flow](https://redux.js.org/assets/images/one-way-data-flow-04fe46332c1ccb3497ecb04b94e55b97.png)
+
+### Exemple
+
+On a migré les compteurs pour que leur state soit géré par redux. Ce qu'il faut retenir:
+
+- Store:
+  - création d'un store unique avec une valeur par défaut
+  - on peut faire de la composition pour avoir des states plus atomiques
+- DevX:
+  - installation sur chrome de l'extension redux
+  - on peut suivre les actions et l'évolution du state -> debug + time travel
+  - \o/ nos tests sont générés automatiquement !
+- Intégration React / Redux
+  - Dispatch
+  - Select
+
+### TODO 1
+
+Faire en sorte que le vault ne s'ouvre que quand les 3 compteurs sont égaux.
+
+2 méthodes: rajouter un state dans redux OU le déduire dans le composant.
+
+### TODO 2
+
+Logguer toutes les actions qui se passent
+
+- Méthode naïve: création d'un nouveau reducer qui loggue + renvoi le même state
+- Méthode meilleure: utilisation d'un middleware
 
 ## XState
 
