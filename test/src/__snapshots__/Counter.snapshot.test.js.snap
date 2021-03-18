@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  <div
+    className="App"
+  >
+    Some content
+  </div>,
+  <button
+    onClick={[Function]}
+  >
+    Click me
+  </button>,
+  "0",
+]
+`;
+
+exports[`renders correctly with a title 1`] = `
+Array [
+  <div
+    className="App"
+  >
+    Some content
+  </div>,
+  <button
+    onClick={[Function]}
+  >
+    Click me
+  </button>,
+  "0",
+]
+`;
