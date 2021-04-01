@@ -35,6 +35,6 @@ TODO:
   }
   </pre>
   et passe le nom du pokemon correspondant à l'id de l'url au composant page.
-- Exporter une fonction `getStaticPaths` qui renvoie pour l'instant un tableau en dur `[1, 2, 3]`
+- Exporter une fonction `getStaticPaths` qui renvoie pour l'instant un tableau en dur `{paths: [{params: {id; 1}}, ...2, ...3]}`
 
 ## 1ère page générée par le serveur
