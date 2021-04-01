@@ -37,4 +37,15 @@ TODO:
   et passe le nom du pokemon correspondant à l'id de l'url au composant page.
 - Exporter une fonction `getStaticPaths` qui renvoie pour l'instant un tableau en dur `{paths: [{params: {id; 1}}, ...2, ...3]}`
 
+A quoi sert la clé fallback ?
+Permet de trouver l'équilibre entre un temps de build court et une bonne perf pour les users.
+
+### Fetcher des vraies données
+
+TODO:
+
+Les noms des pokemons sont maintenant à récupérer via l'API https://pokeapi.co/
+
+- remplacer la constante pokemonIdToNameMap par un call à https://pokeapi.co/api/v2/pokemon?limit=100
+
 ## 1ère page générée par le serveur
