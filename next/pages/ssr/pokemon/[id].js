@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const pokemonIdToNameMap = {
   1: "bulbizarre",
@@ -9,7 +10,9 @@ const pokemonIdToNameMap = {
 
 const Pokemon = () => {
   const [name, setName] = useState("");
-  const id = 3;
+  const {
+    query: { id },
+  } = useRouter();
 
   useEffect(() => {
     const fetchPokemon = async () => {
