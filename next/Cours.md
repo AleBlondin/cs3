@@ -48,4 +48,59 @@ Les noms des pokemons sont maintenant à récupérer via l'API https://pokeapi.c
 
 - remplacer la constante pokemonIdToNameMap par un call à https://pokeapi.co/api/v2/pokemon?limit=100
 
+### Incremental Static Regeneration
+
+Regénérer une page statique après que X secondes se soient écoulées: https://tools.ietf.org/html/rfc5861
+
+Limite: 1 utilisateur peut se faire servir une page extrêmement vieille si la page n'a pas été requêtée depuis longtemps.
+
+Mise en place via le flag `revalidate`.
+Pour voir ça, on affiche sur la page une date passée en props via getStaticProps.
+
 ## 1ère page générée par le serveur
+
+TODO:
+
+On peut modifier la page précédente pour qu'elle soit rendue à chaque requête. Pour ça on remplace `getStaticProps` par `getServerSideProps`.
+Pour cela créer un dossier pages/ssr/pokemon, et implémenter la page dedans.
+
+Lancer un `yarn build` et checker que les pages SSRs ne sont pas pré-rendues.
+
+Afficher la date de rendu de la page.
+
+C'est assez semblable à de l'incremental static regeneration, sauf que le html n'est pas stocké / caché.
+
+## JS exécuté côté front
+
+### Récap
+
+Dans toutes les pages qu'on a vues, que ce soit du statique ou du SSRs, le client reconstruit quand même le html avec le JS (SPA-like). Pour le voir:
+
+- au build regarder le js généré
+- ouvrir les dev tools React
+
+Donc on peut faire tout ce qu'on ferait avec une SPA. Notamment:
+
+- de la pagination front
+
+Mais attention, tous le JS que vous écrivez n'est pas envoyé au front. Pour cela copier votre code dans https://next-code-elimination.vercel.app/ et regarder ce qui reste.
+
+Dangers d'écrire tout son code dans la même app:
+
+- de la logique métier peut fuiter depuis le back vers le front
+- des données sensibles peuvent fuiter depuis le back vers le front
+
+### Pagination front
+
+Objectif: ajouter un bouton next et previous qui permet de faire respectivement +1 et -1 à l'id de la page pokemon.
+
+Pour cela on va utiliser:
+
+- le composant `Link` de `next/link` pour la navigation côté front
+- `useRouter` l'id de l'url et l'incrémenter.
+- fetch dans un useEffect + useState pour récupérer le nom du pokemon à afficher
+
+TODO 1: avec un id en dur (`const id = 3`), ne plus passer le name en props de la page mais le fetcher dans un useEffect.
+Est-il judicieux de changer l'endpoint de l'API pokemon ?
+
+TODO 2: récupérer l'id via `useRouter`.
