@@ -16,11 +16,13 @@ export async function getStaticPaths() {
       id,
     },
   }));
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params: { id } }) {
-  return { props: { name: pokemonIdToNameMap[id] } };
+  const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100");
+  const pokemonIdToNameMap = (await res.json()).results;
+  return { props: { name: pokemonIdToNameMap[id].name } };
 }
 
 export default Pokemon;
