@@ -1,0 +1,22 @@
+{
+    "extends": [
+        "plugin:@next/next/recommended",
+        "prettier"
+    ],
+    "plugins": [
+        "prettier"
+    ],
+    "rules": {
+        "prettier/prettier": "error"
+    },
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+        "requireConfigFile": false,
+        "sourceType": "module",
+        "babelOptions": {
+            "presets": [
+                "next/babel"
+            ]
+        }
+    }
+}
