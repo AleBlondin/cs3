@@ -104,3 +104,5 @@ TODO 1: avec un id en dur (`const id = 3`), ne plus passer le name en props de l
 Est-il judicieux de changer l'endpoint de l'API pokemon ?
 
 TODO 2: récupérer l'id via `useRouter`.
+
+TODO 3: mettre en place la pagination avec un previous et next.

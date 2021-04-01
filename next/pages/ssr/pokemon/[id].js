@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 const pokemonIdToNameMap = {
   1: "bulbizarre",
@@ -23,7 +24,13 @@ const Pokemon = () => {
     fetchPokemon();
   });
 
-  return <div>{name}</div>;
+  return (
+    <div>
+      <Link href={`/ssr/pokemon/${Number(id) - 1}`}>Previous</Link>
+      <div>{name}</div>
+      <Link href={`/ssr/pokemon/${Number(id) + 1}`}>Next</Link>
+    </div>
+  );
 };
 
 export async function getServerSideProps({ params: { id } }) {
