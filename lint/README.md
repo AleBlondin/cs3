@@ -78,3 +78,36 @@ yarn test doit être OK
 La même avec:
 - gestion d'exception: certaines variables d'env n'ont pas à aller dans le .env.template
 - lecture de fichier
+
+### Exemples de règles supplémentaires
+
+Ecrire les règles correspondant aux exemples ci-dessous.
+Dans l'ordre:
+- créer une règle eslint qui ne fait rien
+- écrire le test
+- vérifier qu'il est rouge
+- implémenter la logique
+- vérifier que le test est vert
+
+#### Bonus 1
+
+Une fonction ne peut pas réassigner l'un de ses arguments. Dans le cadre de ce TD on peut se limiter à 1 niveau de profondeur.
+
+```
+// exemple KO
+
+const increment = (someArgument) => {
+  someArgument = someArgument + 1;
+  
+  return someArgument;
+}
+
+
+// exemple OK
+
+const increment = (someArgument) => {
+  const incrementedArgument = someArgument + 1;
+  
+  return incrementedArgument;
+}
+```
