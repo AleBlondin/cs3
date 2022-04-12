@@ -9,7 +9,7 @@
 
 ### State inter-dépendants
 
-Objectif: faire en sorte que le vault afficher ouvert quand les valeurs des 3 compteurs sont identiques.
+Objectif: faire en sorte que le vault affiche ouvert quand les valeurs des 3 compteurs sont identiques.
 
 Pour cela on va remonter le state des compteurs.
 
