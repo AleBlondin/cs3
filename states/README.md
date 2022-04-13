@@ -73,6 +73,12 @@ Logguer toutes les actions qui se passent
 - Méthode naïve: création d'un nouveau reducer qui loggue + renvoi le même state
 - Méthode meilleure: utilisation d'un middleware
 
+### Etat de l'art
+
+Maintenant on abandonne redux dans la plupart des cas:
+- pour stocker de la donnée serveur et éviter de multipler les calls réseau, on combine du state local et des techniques de cache fournies par des clients, par exemple avec https://react-query.tanstack.com/guides/caching
+- pour stocker des données client, on peut se passer du CQRS qui est assez complexe et utiliser le contexte React (https://reactjs.org/docs/context.html). Attention quand le state devient complexe on peut avoir des problèmes de performance !
+
 ## XState
 
 https://github.com/davidkpiano/xstate
