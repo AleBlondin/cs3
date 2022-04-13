@@ -2,10 +2,24 @@
 
 ## React state
 
-### Rappels
+### Pré-requis
 
-- Pourquoi on utilise un hook au lieu de déclarer un state avec const ?
-- Pourquoi on utilise le setter de state plutôt que de muter l'objet ?
+Un composant React se rerend pour 3 raisons:
+- ses props ont changé
+- son state a changé
+- son parent se rerend 
+
+<details>
+<summary>Pourquoi on utilise un hook `useState` au lieu de déclarer un state avec const ?</summary>
+Parce que le composant est une fonction qui est réévaluée à chaque fois que le composant se rerend
+</details>
+
+<details>
+<summary>Pourquoi on utilise le setter de state plutôt que de muter l'objet ?</summary>
+Un composant se rerend quand son state change. Pour savoir si le state a changé, React fait une comparaison ===. En mutant le state, cette comparaison répondra tout le temps que le state reste identique.
+</details>
+
+En React l'information ne peut que descendre d'un composant parent à ses enfants (via les props). Pour faire le chemin inverse, on passe en props une fonction (appelée callback) qui permettra de set le state du parent.
 
 ### State inter-dépendants
 
