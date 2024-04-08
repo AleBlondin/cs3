@@ -1,4 +1,4 @@
-import { sort } from "./sort_pivot";
+import { sort } from "./sort_naive";
 
 describe("sort", () => {
   it("should sort an array in ascending order", () => {
